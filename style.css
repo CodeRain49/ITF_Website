@@ -1,6 +1,7 @@
 nav {
     color: white;
     background-color: rgb(47, 52, 56);
+    padding: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,14 +11,36 @@ body {
     margin: 0;
 }
 
-.container {
+.containertop {
     display: grid;
     grid-template-columns: 120px 260px;
     margin: 5px;
 }
 
-.printsection {
-    background-color: rgb(113, 113, 113);
-    padding: 150px;
-    margin: 15px;
+.container{
+    display: grid;
+    grid-template-columns: 120px 1.5fr 120px 1.5fr;
+    margin: 5px;
+    margin-left: 35px;
+}
+
+#textarea {
+    color: white;
+    background-color: rgb(48, 48, 48);
+    margin: 7px;
+    padding: 10px;
+}
+
+h2 {
+    margin: 0;
+    text-decoration: underline;
+    font-size: 25px;
+}
+
+h4 {
+    font-weight: normal;
+}
+
+p {
+    margin: 0;
 }
