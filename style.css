@@ -80,6 +80,21 @@ p {
     border-radius: 3px;
 }
 
+/* OUTPUT */
+.css-output {
+    padding: 14px;
+    font-size: 15px;
+    border-width: 2px;
+    border-color: rgb(39, 45, 50);
+    background-color: #ffffff;
+    color: #000000;
+    border-style: solid;
+    border-radius: 3px;
+    min-width: 162px;
+    display: inline-block;
+    text-align: right;
+}
+
 /* Dropdown */
 .select {
     padding: 2px;

@@ -8,14 +8,22 @@ let account_balance = 0
 let cash_balance = 0
 let update_num = 1
 
-// Set current bank balance
+// ---------- Initial / After Refresh pages ----------------
+currentAccountBalance.value = 0
+currentCashBalance.value = 0
+amountBankops.value =  0
+textarea.value = ""
+textarea.value = `${update_num}. [Current Account Balance 🏦: ${account_balance} | Current Cash Balance 💵: ${cash_balance}]\n\n${textarea.value}`;
+
+// ------------- Set current bank balance ----------------
 function setCurrentBalance() {
     account_balance = Number(currentAccountBalance.value)
     cash_balance = Number(currentCashBalance.value)
-    textarea.value = `[Current Account Balance 🏦: ${account_balance} | Current Cash Balance 💵: ${cash_balance}]\n\n${textarea.value}`;
+    update_num += 1;
+    textarea.value = `${update_num}. [Current Account Balance 🏦: ${account_balance} | Current Cash Balance 💵: ${cash_balance}]\n\n${textarea.value}`;
 }
 
-// Bank operations -> deposit & withdraw
+// ------------- Bank operations -> deposit & withdraw ----------------
 function confirmBankops() {
 
     if (amountBankOps.value == 0) {
@@ -31,8 +39,8 @@ function confirmBankops() {
         }
         account_balance += Number(amountBankOps.value)
         cash_balance -= Number(amountBankOps.value)
+        update_num += 1
         textarea.value = `${update_num}. Current Account Balance 🏦: ${account_balance} | Current Cash Balance 💵: ${cash_balance}\n\n${textarea.value}`;
-        amountBankOps.value = 0
 
     } else if (myDropdown.value == "withdraw") {
 
@@ -42,11 +50,12 @@ function confirmBankops() {
         }
         account_balance -= Number(amountBankOps.value)
         cash_balance += Number(amountBankOps.value)
+        update_num += 1
         textarea.value = `${update_num}. Current Account Balance 🏦: ${account_balance} | Current Cash Balance 💵: ${cash_balance}\n\n${textarea.value}`;
-        amountBankOps.value = 0
     }
 
-    update_num += 1
+    currentAccountBalance.value = account_balance
+    currentCashBalance.value = cash_balance
 
 }
 
